@@ -1,3 +1,6 @@
+[submodule "vim/bundle/vim-abolish"]
+  path = vim/bundle/vim-abolish
+  url = git://github.com/tpope/vim-abolish
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
@@ -32,3 +35,9 @@
 	path = vim/bundle/vim-nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
 
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-rubyredgreen"]
+	path = vim/bundle/vim-rubyredgreen
+	url = git://github.com/reinh/vim-rubyredgreen
