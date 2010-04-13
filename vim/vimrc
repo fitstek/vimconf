@@ -44,3 +44,6 @@ nmap <silent> <leader>s :set nolist!<CR>
 
 " NERDTree mappings
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" Specific syntax mappings
+au BufNewFile,BufRead *.pde setf arduino
