@@ -47,3 +47,4 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Specific syntax mappings
 au BufNewFile,BufRead *.pde setf arduino
+set ofu=syntaxcomplete#Complete

@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/ecomba/development/eden/curtain_raiser/spec'
+let g:netrw_dirhist_2='/Users/ecomba/development/ecomba/edash/edash_agents/pivotal_tracker/spec'
+let g:netrw_dirhist_3='/Users/ecomba/development/ecomba/edash/edash_agents/pivotal_tracker/lib'
