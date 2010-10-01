@@ -6,3 +6,5 @@ set guioptions-=b
 set guioptions-=r
 colorscheme github 
 set guifont=Bitstream_Vera_Sans_Mono:h13
+
+ab teh the
