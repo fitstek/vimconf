@@ -1,51 +1,76 @@
+" My vimsettings
+"
+" Load all the bundles
 filetype off
-
 call pathogen#runtime_append_all_bundles()
 
+let mapleader = ","
+imap jj <Esc>
+
+" Indentation and tabs
 syntax on
 filetype plugin indent on
 set tabstop=2
 set smarttab
-set title
-set scrolloff=3
-set shiftwidth=2
 set autoindent
 set expandtab
-set number
+
+" Scrolling
+set scrolloff=3
+set shiftwidth=2
+
+" Status line
+set showcmd
 set ruler
-set hidden
-set history=1000
-set wildmode=list:longest
-set ignorecase 
-set smartcase
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set title
+set number
 set shortmess=atI
 set visualbell
-set colorcolumn=85
+set laststatus=2
+set statusline=%<%t%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ pos:%04l,%04v\ %P
 
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+colorscheme github
+set cursorline
+
+set numberwidth=4
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
+set undofile
 
 nnoremap ' `
 nnoremap ` '
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-let mapleader = ","
 
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>srn :set relativenumber<CR>
+nmap <silent> <leader>snn :set number<CR>
 
 " NERDTree mappings
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Specific syntax mappings
 au BufNewFile,BufRead *.pde setf arduino
+
+" CommandT
+let g:CommandTMatchWindowAtTop = 1
+
+" Unbinding the arrow keys
 set ofu=syntaxcomplete#Complete
+for prefix in ['i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
