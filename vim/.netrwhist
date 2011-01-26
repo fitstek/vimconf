@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/ecomba/development/coach_in_a_box'
+let g:netrw_dirhist_2='/Volumes/Other/Users/ecomba/development/ecomba/vim-ruby-refactoring/plugin'
+let g:netrw_dirhist_3='.'
+let g:netrw_dirhist_4='/Volumes/Other/Users/ecomba/.vim'
+let g:netrw_dirhist_5='/Volumes/Other/Users/ecomba/development/ecomba/vim-ruby-refactoring/plugin/refactorings/general'
+let g:netrw_dirhist_6='/Volumes/Other/Users/ecomba/development/eden/ciab_shadow_of_the_leader'
+let g:netrw_dirhist_7='/Volumes/Other/Users/ecomba/development/edenmadrid/website/layouts'
+let g:netrw_dirhist_8='/Volumes/Other/Users/ecomba/.zsh'
