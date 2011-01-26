@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-ruby-refactoring"]
+  path = vim/bundle/vim-ruby-refactoring
+  url = git://github.com/ecomba/vim-ruby-refactoring.git
