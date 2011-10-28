@@ -11,6 +11,7 @@ function! EscapeAndSafe()
 endfunction
 command! EscNSafe call EscapeAndSafe()
 nnoremap <leader>w :EscNSafe<cr>
+map <leader>, :execute ":b#"<CR>
 
 " Indentation and tabs
 syntax on
@@ -39,7 +40,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 colorscheme github
-"set cursorline
+set cursorline
 
 set numberwidth=4
 " Intuitive backspacing in insert mode
