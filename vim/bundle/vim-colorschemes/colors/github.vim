@@ -23,9 +23,9 @@ let g:colors_name="github"
 hi Normal       guifg=#000000 guibg=#F8F8FF
 
 " {{{ Cursor
-hi Cursor		guibg=#444454 guifg=#F8F8FF
-hi CursorLine	guibg=#D8D8DD
-hi CursorColumn	guibg=#E8E8EE
+:hi Cursor		guibg=#444454 guifg=#F8F8FF
+:hi CursorLine	guibg=#D8D8DD
+:hi CursorColumn	guibg=#E8E8EE
 " }}}
 
 " {{{ Diff
