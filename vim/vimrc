@@ -3,6 +3,16 @@
 " Load all the bundles
 filetype off
 call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
+set t_Co=256
+set spell
+set clipboard=unnamed
+
+" Set the directories for the swp and un files
+set dir=~/.swpfiles
+set backupdir=~/.swpfiles
+set undodir=~/.undofiles
 
 let mapleader = ","
 imap jj <Esc>
@@ -11,13 +21,14 @@ function! EscapeAndSafe()
 endfunction
 command! EscNSafe call EscapeAndSafe()
 nnoremap <leader>w :EscNSafe<cr>
-map <leader>, :execute ":b#"<CR>
+map <leader>, :execute ":b#"<cr>
+map <leader>a :execute ":A"<cr>
 
 " Indentation and tabs
 syntax on
 filetype plugin indent on
 set tabstop=2
-set smarttab
+"set smarttab
 set autoindent
 set expandtab
 
@@ -33,33 +44,41 @@ set number
 set shortmess=atI
 set visualbell
 set laststatus=2
-set statusline=%<%t%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ pos:%04l,%04v\ %P
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 16
+set guifont=Mensch\ for\ Powerline\ Medium\ 16
+let Powerline_symbols = 'fancy'
+"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+"set statusline=%<%t%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ pos:%04l,%04v\ %P
 
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
-colorscheme github
+set colorcolumn=78
+" solarized theme settings
+syntax enable
+set background=dark
+"set background=light
+colorscheme solarized
+
 set cursorline
+:hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
 
 set numberwidth=4
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 
 " Highlight search terms...
-set hlsearch
 set incsearch " ...dynamically as they are typed.
 set undofile
+set shell=zsh
 
 nnoremap ' `
 nnoremap ` '
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+nnoremap <Tab> <C-w><C-w>
 
-
-nmap <silent> <leader>n :silent :nohlsearch<CR>
-
-set listchars=tab:>-,trail:·,eol:$
+set listchars=tab:>-,trail:·,eol:⁊
 nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>srn :set relativenumber<CR>
 nmap <silent> <leader>snn :set number<CR>
@@ -70,8 +89,13 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 " Specific syntax mappings
 au BufNewFile,BufRead *.pde setf arduino
 
-" CommandT
-let g:CommandTMatchWindowAtTop = 1
+" CRLTP
+map <leader>b :CtrlPBuffer<CR>
+map <leader>f :CtrlPCurFile<CR>
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mode = 0
+set wildignore+=*/tmp/*,*.so,*.swp,*.un*,.git,*.zip,.DS_Store,.jhw-cache/*  " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\.git$|\.svn$|\.swp$|\.o$|\.un\˜$|\.DS_Store$|\.jhw-cache$'
 
 " Unbinding the arrow keys
 set ofu=syntaxcomplete#Complete
